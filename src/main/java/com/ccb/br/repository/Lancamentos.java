@@ -19,4 +19,8 @@ public class Lancamentos {
 		TypedQuery<Lancamento> query = manager.createQuery("from Lancamento", Lancamento.class);
 		return query.getResultList();
 	}
+	
+	public void adicionar(Lancamento lancamento) {
+		this.manager.persist(lancamento);
+	}
 }
