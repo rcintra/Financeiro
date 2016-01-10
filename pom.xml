@@ -17,6 +17,14 @@
   				<target>1.7</target>
   			</configuration>
   		</plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
   	</plugins>
   </build>
   <dependencies>
@@ -51,5 +59,11 @@
   		<artifactId>jstl</artifactId>
   		<version>1.2</version>
   	</dependency>
+	<!-- Implementacao do Bean Validation -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.0.1.Final</version>
+	</dependency>
   </dependencies>
 </project>
