@@ -1,17 +1,19 @@
 package com.ccb.br.service;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.inject.Inject;
 
 import com.ccb.br.model.Lancamento;
 import com.ccb.br.repository.Lancamentos;
 
-public class CadastroLancamentos {
+public class CadastroLancamentos implements Serializable {
 
+	private static final long serialVersionUID = 6433616296694864629L;
+	
+	@Inject
 	private Lancamentos lancamentos;
-
-	public CadastroLancamentos(Lancamentos lancamentos) {
-		this.lancamentos = lancamentos;
-	}
 
 	public void salvar(Lancamento lancamento) throws NegocioException { 
 		if (lancamento.getDataPagamento() != null 
