@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import com.ccb.br.model.Lancamento;
 import com.ccb.br.repository.Lancamentos;
+import com.ccb.br.util.Transactional;
 
 public class CadastroLancamentos implements Serializable {
 
@@ -15,6 +16,7 @@ public class CadastroLancamentos implements Serializable {
 	@Inject
 	private Lancamentos lancamentos;
 
+	@Transactional
 	public void salvar(Lancamento lancamento) throws NegocioException { 
 		if (lancamento.getDataPagamento() != null 
 				&& lancamento.getDataPagamento().after(new Date())) {
